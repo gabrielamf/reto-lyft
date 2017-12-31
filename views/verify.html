@@ -18,7 +18,7 @@
 				<span class="glyphicon glyphicon-chevron-left icon-back" aria-hidden="true"></span>
 			</div>
 			<div class="col-xs-push-1 text-center">
-				<h3 class="subtitle">Sing Up</h3>
+				<h3 class="subtitle">Verify phone number</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -26,22 +26,16 @@
 			<hr>
 			<br>
 		</div>
-		<div class="row">
-			<div class="col-xs-3">
-				<select id="countries">
-					<option>+(País)</option>
-					<option value="51">Perú</option>
-					<option value="52">México</option>
-					<option value="57">Colombia</option>
-					<option value="1">EE.UU</option>
-				</select>
-				<hr class="line">
-			</div>
-			<div class="col-xs-8">
-				<input type="number" id="number" class="form-control" maxlength="10">
+		<div class="row text-center">
+			<div class="col-xs-8 col-xs-offset-2">
+				<form action="">
+					<label for="exampleInputName2">LAB-</label>
+					<input type="text" class="input-code" id="exampleInputName2" placeholder="code">
+				</form>
 			</div>
 		</div>
-		<p class="text-center">We'll send a text to verify your phone</p>
+		<p class="text-center">Enter the code sent to</p>
+		<button class="btn btn-default center-block btn-resend">Resend code</button>
 		<button class="btn btn-default btn-lg text-uppercase center-block btn-gray">Next</button>
 	</section>
 

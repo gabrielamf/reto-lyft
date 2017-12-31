@@ -17,8 +17,8 @@
 			<div class="col-xs-1">
 				<span class="glyphicon glyphicon-chevron-left icon-back" aria-hidden="true"></span>
 			</div>
-			<div class="col-xs-push-1 text-center">
-				<h3 class="subtitle">Sing Up</h3>
+			<div class="col-xs-8 col-xs-push-1 text-center">
+				<h3 class="subtitle">Sign up</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -27,21 +27,31 @@
 			<br>
 		</div>
 		<div class="row">
-			<div class="col-xs-3">
-				<select id="countries">
-					<option>+(País)</option>
-					<option value="51">Perú</option>
-					<option value="52">México</option>
-					<option value="57">Colombia</option>
-					<option value="1">EE.UU</option>
-				</select>
-				<hr class="line">
-			</div>
-			<div class="col-xs-8">
-				<input type="number" id="number" class="form-control" maxlength="10">
+			<div class="col-xs-8 col-xs-offset-2">
+				<form>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+							</div>
+							<input type="text" class="form-control" placeholder="First name">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+							</div>
+							<input type="text" class="form-control" placeholder="Email">
+						</div>
+					</div>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="inlineCheckbox1" value="option1"> I agree to Lyft'ss
+					</label>
+					<a href="#">Terms of Service here</a>
+				</form>
 			</div>
 		</div>
-		<p class="text-center">We'll send a text to verify your phone</p>
 		<button class="btn btn-default btn-lg text-uppercase center-block btn-gray">Next</button>
 	</section>
 
