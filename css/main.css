@@ -1,0 +1,89 @@
+body {
+	font-family: 'Raleway', sans-serif !important;
+}
+
+.bg-lyft {
+	background: linear-gradient(#53085E, #D91A88);
+}
+
+:root {
+  --pink: #D91A88;
+  --purple: #53085E;
+}
+
+.vh100 {
+	height: 100vh;
+}
+
+.container-flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bg-car {
+	background-image: url('../assets/images/lyft-move.gif');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.btn-inicio {
+	background-color: transparent;
+	color: #ffffff;
+	padding: 1.5rem 2rem;
+	border: 1px solid #ffffff;
+	transition: .5s;
+	box-sizing: border-box;
+	margin-top: 1em;
+}
+
+.btn-inicio:hover {
+	background-color: var(--pink);
+	color: #ffffff;
+	border: none;
+}
+
+.logo-white {
+	margin-top: 1em;
+	margin-bottom: 7em;
+}
+
+.icon-back {
+	border: 3px solid black;
+	padding: 5px 5px 7px 5px;
+	border-radius: 50%;
+	margin-right: 25%;
+	margin-left: 15px;
+}
+
+.subtitle {
+	display: inline-block;
+	margin-bottom: 1.5em;
+	margin-top: 2em;
+}
+
+#countries {
+	padding: 6px 0;
+	background-color: #ffffff;
+	border: none;
+	border-radius: none;
+}
+
+.form-control {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 3em;
+}
+
+.btn-gray {
+	background-color: #DFDFDF;
+	border: none;
+	padding: 1em 0;
+	margin-top: 2em;
+	width: 100%;
+}
+
+.line {
+	transform: translateY(-20px);
+	border: .5px solid #D91A88;
+}
