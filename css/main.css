@@ -109,5 +109,10 @@ body {
 .check {
 	width: 50%;
 	margin: 0 auto;
-	padding-top: 3em:
+	padding-top: 3em;
+}
+
+.btn-next-active {
+	background-color: var(--pink);
+	color: #ffffff;
 }
