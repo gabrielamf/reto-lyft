@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
   $('#countries').change(function() {
     var code = $(this).val();
     $('#code').val(code);
@@ -7,19 +7,24 @@ $(document).ready(function() {
 
   $('#number').on('input', function() {
     if ($(this).val().length === 10) {
-      $('#btn-next').attr('disabled', false);
-      $('#btn-next').addClass('btn-next-active');
+      $('#btn-next-logIn').removeClass('disabled');
+      $('#btn-next-logIn').addClass('btn-next-active');
     } else {
-      $('#btn-next').attr('disabled', 'disabled');
-      $('#btn-next').removeClass('btn-next-active');
+      $('#btn-next-logIn').addClass('disabled');
+      $('#btn-next-logIn').removeClass('btn-next-active');
     }
   });
 	
-  $('#btn-next').click(function() {
+  $('#btn-next-logIn').click(function() {
     // Numeros random
-    var code = (Math.floor(Math.random() * 900) + 100);
-    alert('Tu código es: LAB-' + code);
+    var codeRandom = generateCode();
+    alert('Tu código es: LAB-' + codeRandom);
     $(this).attr('href', '../views/verify.html');
+    $('#number').val('');
   });
+	
+  function generateCode() {
+    return Math.floor((Math.random() * 900) + 100);
+	}*/
 });
 
