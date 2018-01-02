@@ -22,12 +22,22 @@ $(document).ready(function() {
   $number.on('input', validateUserNumber);
   function validateUserNumber() {
     if ($(this).val().length === 10) {
-      $('#btn-next-logIn').removeClass('disabled');
-      $('#btn-next-logIn').addClass('btn-next-active');
+      activeButton();
     } else {
-      $('#btn-next-logIn').addClass('disabled');
-      $('#btn-next-logIn').removeClass('btn-next-active');
+      desactiveButton();
     }
+  }
+	
+  // ACTIVE BUTTON
+  function activeButton() {
+    $('#btn-next-logIn').removeClass('disabled');
+    $('#btn-next-logIn').addClass('btn-next-active');
+  }
+
+  // DESACTIVE BUTTON
+  function desactiveButton() {
+    $('#btn-next-logIn').addClass('disabled');
+    $('#btn-next-logIn').removeClass('btn-next-active');
   }
 	
   // GENERA CODIGO RANDOM
@@ -49,11 +59,10 @@ $(document).ready(function() {
     // var $campText = $inputCode.val();
     if ($inputCode.val() === localStorage.userCodeRandom) {
       console.log('valido');
-      $('#btn-next-verify').removeClass('disabled');
-      $('#btn-next-verify').addClass('btn-next-active');
+			$('#btn-next-logIn').removeClass('disabled');
+			$('#btn-next-logIn').addClass('btn-next-active');
     } else {
-      $('#btn-next-verify').addClass('disabled');
-      $('#btn-next-verify').removeClass('btn-next-active');
+      desactiveButton();
     }
   }
 	
@@ -67,4 +76,27 @@ $(document).ready(function() {
     $inputCode.val('');
     $inputCode.focus();
   }
+	
+  // VALIDATE FORM USER
+  var $name = $('#name');
+  var $name = $('#lastname');
+	var $email = $('#inputEmail');
+	
+	var validateName = false;
+  var validateLastname = false; 
+  var validateChecked = false;  
+
+  function validateName() {
+    var regex = /^[a-z0-9ü][a-z0-9ü_]{3,9}$/;
+    if (regex.test().val()) {
+      $name = true;
+    }
+  }
 });
+
+//  /^[a-z0-9ü][a-z0-9ü_]{3,9}$/; //  /^[a-z\d_]{4,15}$/i 
+//     if ($(this).val().length === 10) {
+	/*activeButton();
+} else {
+	desactiveButton();
+} */

@@ -116,3 +116,13 @@ body {
 	background-color: var(--pink);
 	color: #ffffff;
 }
+
+#name {
+	display: inline-block;
+	width: 50%;
+}
+
+#lastname {
+	display: inline-block;
+	width: 50%;
+}
