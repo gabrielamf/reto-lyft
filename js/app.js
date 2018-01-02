@@ -14,7 +14,6 @@ $(document).ready(function() {
   function countrieCode() {
     code = $(this).val();
     $('#code').val(code);
-    $number.focus();
   };
 	
   // LOG IN
@@ -22,24 +21,14 @@ $(document).ready(function() {
   $number.on('input', validateUserNumber);
   function validateUserNumber() {
     if ($(this).val().length === 10) {
-      activeButton();
+      $('#btn-next-logIn').removeClass('disabled');
+      $('#btn-next-logIn').addClass('btn-next-active');
     } else {
-      desactiveButton();
+      $('#btn-next-logIn').addClass('disabled');
+      $('#btn-next-logIn').removeClass('btn-next-active');
     }
   }
-	
-  // ACTIVE BUTTON
-  function activeButton() {
-    $('#btn-next-logIn').removeClass('disabled');
-    $('#btn-next-logIn').addClass('btn-next-active');
-  }
 
-  // DESACTIVE BUTTON
-  function desactiveButton() {
-    $('#btn-next-logIn').addClass('disabled');
-    $('#btn-next-logIn').removeClass('btn-next-active');
-  }
-	
   // GENERA CODIGO RANDOM
   var $boton = $('#btn-next-logIn');
   $boton.on('click', generateRandomCode);
@@ -59,10 +48,11 @@ $(document).ready(function() {
     // var $campText = $inputCode.val();
     if ($inputCode.val() === localStorage.userCodeRandom) {
       console.log('valido');
-			$('#btn-next-logIn').removeClass('disabled');
-			$('#btn-next-logIn').addClass('btn-next-active');
+      $('#btn-next-verify').removeClass('disabled');
+      $('#btn-next-verify').addClass('btn-next-active');
     } else {
-      desactiveButton();
+      $('#btn-next-verify').addClass('disabled');
+      $('#btn-next-verify').removeClass('btn-next-active');
     }
   }
 	
@@ -71,7 +61,7 @@ $(document).ready(function() {
   $botonResend.on('click', resendRandomCode);
   function resendRandomCode() {
     var codeRandom = Math.floor((Math.random() * 900) + 100);
-    alert('Tu código es: LAB-' + codeRandom);
+    alert('Tu nuevo código es: LAB-' + codeRandom);
     localStorage.userCodeRandom = codeRandom;
     $inputCode.val('');
     $inputCode.focus();
@@ -79,24 +69,71 @@ $(document).ready(function() {
 	
   // VALIDATE FORM USER
   var $name = $('#name');
-  var $name = $('#lastname');
-	var $email = $('#inputEmail');
+  var $lastname = $('#lastname');
+  var $email = $('#inputEmail');
+  var $checked = $('input[type="checkbox"]');
 	
-	var validateName = false;
+  var validateNAme = false;
   var validateLastname = false; 
+  var validateEmail = false;  
   var validateChecked = false;  
-
-  function validateName() {
-    var regex = /^[a-z0-9ü][a-z0-9ü_]{3,9}$/;
-    if (regex.test().val()) {
-      $name = true;
-    }
+	
+  function activeButton() {
+    if (validateEmail && validateNAme && validateLastname && validateChecked) {
+      $('#btn-next-user').removeClass('disabled');
+      $('#btn-next-user').addClass('btn-next-active');
+    } 
   }
-});
+	
+  function desactiveButton() {
+    $('#btn-next-user').addClass('disabled');
+    $('#btn-next-user').removeClass('btn-next-active');
+  }
+	
+  $email.on('input', function(event) {
+    var REGEXEMAIL = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
+    console.log(REGEXEMAIL.test($(this).val()));
+    console.log($(this).val());
+    if (REGEXEMAIL.test($(this).val())) {
+      validateEmail = true;
+      activeButton(); 
+    } else {
+      desactiveButton();
+    }
+  });
+	
+  $name.on('input', function() {
+    if ($(this).val().length >= 3) {
+      validateNAme = true;
+      activeButton();
+    } else {
+      desactiveButton();
+    }
+  });
 
-//  /^[a-z0-9ü][a-z0-9ü_]{3,9}$/; //  /^[a-z\d_]{4,15}$/i 
-//     if ($(this).val().length === 10) {
-	/*activeButton();
-} else {
-	desactiveButton();
-} */
+  $name.on('input', function() {
+    if ($(this).val().length >= 3) {
+      validateLastname = true;
+      activeButton();
+    } else {
+      desactiveButton();
+    }
+  });
+
+  $checked.on('click', function(event) {
+    if (event.target.checked) {
+      //   alert('entre');
+      validateChecked = true;
+      activeButton();
+    } else {
+      desactiveButton();
+    }
+  });
+	
+  $('btn-next-user').on('click', function(event) {
+    event.preventDefault();
+    localStorage.email = $email.val();
+    localStorage.name = $password.val();
+    localStorage.lastname = $email.val();
+  });
+});

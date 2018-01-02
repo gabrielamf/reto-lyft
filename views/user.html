@@ -15,7 +15,9 @@
 	<section class="container">
 		<div class="row">
 			<div class="col-xs-1">
-				<span class="glyphicon glyphicon-chevron-left icon-back" aria-hidden="true"></span>
+				<a href="verify.html">
+					<span class="glyphicon glyphicon-chevron-left icon-back" aria-hidden="true"></span>
+				</a>
 			</div>
 			<div class="col-xs-8 col-xs-push-1 text-center">
 				<h3 class="subtitle">Sign up</h3>
@@ -34,7 +36,7 @@
 							<div class="input-group-addon">
 								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 							</div>
-							<input id="name" type="text" class="form-control" placeholder="Name">
+							<input id="name" type="text" class="form-control" placeholder="Name" autofocus>
 							<input id="lastname" type="text" class="form-control" placeholder="Lastname">
 						</div>
 					</div>
@@ -47,13 +49,13 @@
 						</div>
 					</div>
 					<label for="inputAgree" class="checkbox-inline">
-						<input type="checkbox" id="inputAgree"> I agree to Lyft'ss
+						<input type="checkbox" id="checkbox"> I agree to Lyft'ss
 					</label>
 					<a href="#">Terms of Service here</a>
 				</form>
 			</div>
 		</div>
-		<button id="btn-next-logIn" class="btn btn-default btn-lg text-uppercase center-block btn-gray disabled" href="close.html">Next</button>
+		<a  role="button" class="btn btn-default btn-lg text-uppercase center-block btn-gray disabled" id="btn-next-user" href="close.html">Next</a>
 	</section>
 
 	<script src="../vendors/jquery/jquery-3.2.1.min.js"></script>

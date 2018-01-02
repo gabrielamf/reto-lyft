@@ -61,6 +61,13 @@ body {
 	margin-right: 25%;
 	margin-left: 15px;
 	margin-top: 3em;
+	color: black;
+	transition: .5s;
+}
+
+.icon-back:hover {
+	color: var(--pink);
+	border: 3px solid var(--pink);
 }
 
 .subtitle {
